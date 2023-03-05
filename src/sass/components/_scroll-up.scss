@@ -1,0 +1,56 @@
+// Зручний скроллінг body догори сторінки
+.up-button {
+  position: fixed;
+
+  @include respondTo('semiditonus') {
+    bottom: 15px;
+    right: 30px;
+  }
+
+  bottom: 45px;
+  right: 85px;
+}
+
+.up-button__link {
+  position: relative;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  width: 30px;
+  height: 70px;
+  background-color: darken(saturate(getColor('accent'), 11.05), 24.51); // #c79002
+  fill: getColor('accent');
+  opacity: 0.5;
+  z-index: 999; // Вивести наверх над слайдерами
+  @include transition(background-color, fill, opacity, box-shadow);
+
+  &:hover,
+  &:focus {
+    scale: 1;
+    opacity: 1;
+    background-color: getColor('accent');
+    fill: getColor('primary-inversed'); 
+    box-shadow: darken(saturate(getColor('accent'), 11.05), 24.51); // #c79002
+  }
+
+  @include respondTo('semiditonus') {
+    width: 25px;
+    height: 60px;
+  }
+
+  @include respondTo('diapason') {
+    width: 45px;
+    height: 80px;
+  }
+}
+
+.up-button__link.btn-up-visible {
+  display: flex;
+}
+
+.up-button__icon {
+  position: relative;
+  top: 20px;
+  left: 0;
+}

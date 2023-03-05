@@ -1,0 +1,27 @@
+// Підзаголовок героїв основних сторінок та секції contacts
+.subtitle {
+    @extend %marginPaddingReset;
+    font-weight: 600;
+    line-height: 1.219;
+    letter-spacing: 0.02em;
+
+    &--hero {
+      font-size: 16px;
+      margin-bottom: 40px;
+      color: getColor('primary-inversed');
+
+      @include respondTo('semiditonus') {
+        margin-bottom: 32px;
+        font-size: 14px;
+      }
+    
+      @include respondTo('diapente') {
+        margin-bottom: 56px;
+        font-size: 20px;
+      }
+    
+      @include respondTo('diapason') {
+        margin-bottom: 64px;
+      }
+    }
+  }

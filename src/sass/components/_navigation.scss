@@ -1,0 +1,84 @@
+// Блок навігації
+.navigation {
+  @extend %list;
+}
+
+.navigation__item {
+  display: flex;
+  align-items: center;
+}
+
+// Посилання навігації по сторінках сайту
+.navigation__department {
+  @extend %marginPaddingReset;
+  @extend %link;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.219;
+  letter-spacing: 0.02em;
+  color: getColor('accent');
+  @include transition(color);
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: darken(saturate(getColor('accent'), 11.05), 24.51); // #c79002
+  }
+
+  &.header__navigation-link {
+    @include respondTo('tritonus') {
+      font-size: 16px;
+    }
+  }
+}
+
+// Обгортка посилання на номери телефонів відділів
+.navigation__wrap {
+  @include respondTo('diapente') {
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+  }
+}
+
+// Посилання на контактні номери різних відділов
+.navigation__contact {
+  @extend %link;
+
+  @include respondTo('diapente') {
+    padding: 9px 8px 7px 8px;
+    display: flex;
+    align-items: center;
+    @include transition(color);
+
+    .navigation__wrap:hover & {
+      color: getColor('accent')
+    }
+  }
+}
+
+// Номери телефонів
+.navigation__number {
+
+  @include respondTo('diapente') {
+    display: block;
+    font-size: 14px;
+    line-height: 1.219;
+    letter-spacing: 0.02em;
+    color: getColor('primary-inversed');
+    @include transition(color);
+
+    .navigation__wrap:hover &,
+    .navigation__wrap:focus & {
+      color: getColor('accent');
+    }
+  }
+}
+
+// Іконки телефонів
+.navigation__icon {
+
+  @include respondTo('diapente') {
+    margin-right: 8px;
+  }
+}

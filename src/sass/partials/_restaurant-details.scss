@@ -1,0 +1,8 @@
+// Стилі заголовку секції
+.restaurant-details__title {
+  margin-bottom: 20px;
+
+  @include respondTo('diapente') {
+    margin-bottom: 8px;
+  }
+}

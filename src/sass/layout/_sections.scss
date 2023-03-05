@@ -1,0 +1,82 @@
+// Загальні стилі секцій
+.section {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 414px;
+
+  @include respondTo('diapente') {
+    max-width: 1024px;
+  }
+
+  @include respondTo('diapason') {
+    max-width: 1280px;
+  }
+}
+
+.section__container {
+  position: relative;
+}
+
+// Стилі секцій hero
+.section-hero {
+  @extend .section;
+  padding-top: 181px;
+  padding-bottom: 20px;
+  text-align: center;
+
+  @include respondTo('diapente') {
+    padding-top: 188px;
+    padding-bottom: 15px;
+  }
+
+  @include respondTo('diapason') {
+    padding-top: 164px;
+    padding-bottom: 64px;
+  }
+}
+
+// Стилі секцій about
+.section-content {
+  @extend .section;
+  padding-top: 16px;
+  padding-bottom: 20px; 
+  background-color: getColor('background');
+
+  @include respondTo('diapente') {
+    padding-top: 120px;
+    padding-bottom: 32px;
+  }
+
+  @include respondTo('diapason') {
+    padding-bottom: 50px;
+  }
+}
+
+// Стилі секцій details
+.section-details {
+  @extend .section;
+  padding-top: 24px;
+  padding-bottom: 40px;
+
+  @include respondTo('diapente') {
+    padding-top: 48px;
+  }
+}
+
+// Стилі секцій rooms
+.section-booking {
+  @extend .section;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  background-color: getColor('background');
+
+  @include respondTo('diapente') {
+    padding-top: 62px;
+    padding-bottom: 40px;
+  }
+
+  @include respondTo('diapason') {
+    padding-top: 72px;
+  }
+}

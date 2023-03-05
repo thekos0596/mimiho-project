@@ -1,0 +1,7 @@
+// Нижній регістр заголовку секції
+.room-luxe__title {
+
+  &--lowercase {
+    text-transform: lowercase;
+  }
+}

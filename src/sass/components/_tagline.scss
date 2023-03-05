@@ -1,0 +1,27 @@
+// Стилі слогана - тексту над логотипом у секціях
+.tagline {
+  font-family: $text-times-font;
+  @extend %marginPaddingReset;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.15;
+  color: darken(getColor('primary-inversed'), 29.41); // #b4b4b4
+
+  @include respondTo('diapente') {
+    font-size: 32px;
+    margin-bottom: 4px;
+  }
+
+  &--left {
+    margin-bottom: 12px;
+  }
+
+  &--right {
+    margin-bottom: 6px;
+    text-align: right;
+  }
+
+  &--rooms {
+    margin-bottom: 8px;
+  }
+}

@@ -1,0 +1,38 @@
+// Анімація тексту та заголовків на слайдах room-hero
+.animation {
+  opacity: 0;
+  transform: translate(0px, 120%);
+  @include transition(transform, opacity);
+}
+
+// Анімація тексту світлих секцій
+.animation-right {
+  opacity: 0;
+  transform: translateX(120%);
+  @include transition(transform, opacity);
+}
+
+.animation-left {
+  opacity: 0;
+  transform: translateX(-120%);
+  @include transition(transform, opacity);
+}
+
+// Закінчення анімації
+.animation ._appeared,
+._appeared .animation {
+  opacity: 1;
+  transform: translate(0px, 0px);
+}
+
+.animation-right ._appeared,
+._appeared .animation-right {
+  opacity: 1;
+  transform: translate(0px, 0px);
+}
+
+.animation-left ._appeared,
+._appeared .animation-left {
+  opacity: 1;
+  transform: translate(0px, 0px);
+}

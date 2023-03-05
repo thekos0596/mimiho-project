@@ -1,0 +1,16 @@
+// Стилі основного заголовку секції
+.home-hero__title {
+  margin-bottom: 24px;
+
+  @include respondTo('semiditonus') {
+    margin-bottom: 16px;
+  }
+
+  @include respondTo('diapente') {
+    margin-bottom: 16px;
+  }
+
+  @include respondTo('diapason') {
+    margin-bottom: 32px;
+  }
+}

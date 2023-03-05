@@ -1,0 +1,168 @@
+// Свайпер секції room-hero
+.slide-hero {
+  padding-top: 471px;
+  padding-bottom: 165px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include respondTo('diapente') {
+    padding-top: 468px;
+  }
+  @include respondTo('diapason') {
+    padding-top: 524px;
+  }
+
+  // Слайд "Двохмісного номеру люкс"
+  &--luxe {
+    @include respondTo('tritonus') {
+      padding-bottom: 133px;
+    }
+
+    @include backgroundImageRetina(
+      $gradient: linear-gradient(transparentize(getColor('primary-inversed'), 0.99), transparentize(getColor('primary-inversed'), 0.99)),
+      $page: swiper,
+      $section: room,
+      $part: mobile,
+      $file: room-first-mob,
+      $webp-file: '../images/swiper/room/desktop/room-first-mob.webp'
+    );
+
+    @include respondTo('diapente') {
+      @include backgroundImageRetina(
+        $gradient: linear-gradient(transparentize(getColor('primary-inversed'), 0.99), transparentize(getColor('primary-inversed'), 0.99)),
+        $page: swiper,
+        $section: room,
+        $part: tablet,
+        $file: room-first-tab,
+        $webp-file: '../images/hero/hotel/desktop/room-first-tab.webp'
+      );
+    }
+
+    @include respondTo('diapason') {
+      @include backgroundImageRetina(
+        $gradient: linear-gradient(transparentize(getColor('primary-inversed'), 0.99), transparentize(getColor('primary-inversed'), 0.99)),
+        $page: swiper,
+        $section: room,
+        $part: desktop,
+        $file: room-first-desk,
+        $webp-file: '../images/hero/hotel/desktop/room-first-desk.webp'
+      );
+    }
+  }
+
+  // Слайд трьохмісного номеру
+  &--triple {
+    @include backgroundImageRetina(
+      $gradient: linear-gradient(transparentize(getColor('primary-inversed'), 0.99), transparentize(getColor('primary-inversed'), 0.99)),
+      $page: swiper,
+      $section: room,
+      $part: mobile,
+      $file: room-third-mob,
+      $webp-file: '../images/swiper/room/desktop/room-third-mob.webp'
+    );
+
+    @include respondTo('diapente') {
+      @include backgroundImageRetina(
+        $gradient: linear-gradient(transparentize(getColor('primary-inversed'), 0.99), transparentize(getColor('primary-inversed'), 0.99)),
+        $page: swiper,
+        $section: room,
+        $part: tablet,
+        $file: room-third-tab,
+        $webp-file: '../images/hero/hotel/desktop/room-third-tab.webp'
+      );
+    }
+
+    @include respondTo('diapason') {
+      @include backgroundImageRetina(
+        $gradient: linear-gradient(transparentize(getColor('primary-inversed'), 0.99), transparentize(getColor('primary-inversed'), 0.99)),
+        $page: swiper,
+        $section: room,
+        $part: desktop,
+        $file: room-third-desk,
+        $webp-file: '../images/hero/hotel/desktop/room-third-desk.webp'
+      );
+    }
+  }
+
+  // Слайд двохмісного номеру
+  &--double {
+    @include backgroundImageRetina(
+      $gradient: linear-gradient(transparentize(getColor('primary-inversed'), 0.99), transparentize(getColor('primary-inversed'), 0.99)),
+      $page: swiper,
+      $section: room,
+      $part: mobile,
+      $file: room-second-mob,
+      $webp-file: '../images/swiper/room/desktop/room-second-desk.webp'
+    );
+
+    @include respondTo('diapente') {
+      @include backgroundImageRetina(
+        $gradient: linear-gradient(transparentize(getColor('primary-inversed'), 0.99), transparentize(getColor('primary-inversed'), 0.99)),
+        $page: swiper,
+        $section: room,
+        $part: tablet,
+        $file: room-second-tab,
+        $webp-file: '../images/swiper/room/desktop/room-second-desk.webp'
+      );
+    }
+
+    @include respondTo('diapason') {
+      @include backgroundImageRetina(
+        $gradient: linear-gradient(transparentize(getColor('primary-inversed'), 0.99), transparentize(getColor('primary-inversed'), 0.99)),
+        $page: swiper,
+        $section: room,
+        $part: desktop,
+        $file: room-second-desk,
+        $webp-file: '../images/swiper/room/desktop/room-second-desk.webp'
+      );
+    }
+  }
+}
+
+// Стилі кнопок навігації свайпером
+.swiper-hero__arrows {
+  @extend %list;
+}
+
+.swiper-hero-button-next,
+.swiper-hero-button-prev {
+  position: absolute;
+  z-index: 99;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  @extend %marginPaddingReset;
+  width: 40px;
+  height: 40px;
+  background-color: transparentize(getColor('primary'), 0.6); // rgba(0, 0, 0, 0.6)
+  fill: getColor('accent');
+  border: none;
+  @include transition(fill);
+
+  &:hover,
+  &:focus,
+  &:active {
+    fill: transparentize(getColor('accent'), 0.3); // rgba(243, 198, 83, 0.7)
+  }
+}
+
+.swiper-hero-button-next {
+  right: 15px;
+  @include respondTo('diapente') {
+    right: 47px;
+  }
+  @include respondTo('diapason') {
+    right: 85px;
+  }
+}
+
+.swiper-hero-button-prev {
+  left: 15px;
+  @include respondTo('diapente') {
+    left: 47px;
+  }
+  @include respondTo('diapason') {
+    left: 85px;
+  }
+}

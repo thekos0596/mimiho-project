@@ -1,0 +1,31 @@
+// Колір секції 
+.room-triple {
+  background-color: darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98); // #f0ecd6
+}
+
+// Стилі слогану
+.room-triple__tagline {
+  margin-bottom: 8px;
+
+  @include respondTo('diapente') {
+    margin-right: 17px;
+  }
+
+  @include respondTo('diapason') {
+    margin-right: 57px;
+  }
+}
+
+// Стилі лого
+.room-triple__logo {
+  text-align: right;
+  margin-right: -12px;
+
+  @include respondTo('diapente') {
+    margin-right: -3px;
+  }
+
+  @include respondTo('diapason') {
+    margin-right: 37px;
+  }
+}

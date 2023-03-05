@@ -1,0 +1,246 @@
+// Точки перелому
+$breakpoints: (
+  'semiditonus': (
+    max-width: 413px,
+  ),
+  'ditonus': (
+    min-width: 414px,
+  ),
+  'tritonus': (
+    max-width: 1023px,
+  ),
+  'diapente': (
+    min-width: 1024px,
+  ),
+  'heptachordium maius': (
+    max-width: 1279px,
+  ),
+  'diapason': (
+    min-width: 1280px,
+  ),
+) !default;
+
+// Шрифти
+$text-font-stack: 'Montserrat', sans-serif;
+
+$logo-font: 'Film P3', sans-serif;
+
+$text-times-font: 'Times New Roman', serif;
+
+// Кубік Без'є
+$timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+// Мапа кольорів
+$colors: (
+  'accent': #f3c653, // $cream-can,
+  'background': #fffdee, // $island-spice,
+  'primary': #000000, // $black,
+  'primary-inversed': #ffffff, // $white,
+  );
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // ДЛЯ ФУНКЦІЇ ПЕРЕБОРУ КОЛЬОРІВ
+  // 'accent-a70': rgba(243, 198, 83, 0.7) 
+  // 'accent-darker': #c79002, $buddha-gold, // darken(saturate(getColor('accent'), 11.05), 24.51)
+  // 'accent-darker-a70': rgba(243, 198, 83, 0.7) transparentize(darken(saturate(getColor('accent'), 11.05), 24.51), 0.7),
+  // 'background-dark': #f0ecd6, $aths-special,
+  // // darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98)
+  // 'background-darker': #0e0c07, $eternity, // lighten(saturate(adjust-hue(getColor('primary'), 43), 33.33), 4.12)
+  // 'primary-a40': rgba(0, 0, 0, 0.1), transparentize(getColor('primary'), 0.1),
+  // 'primary-a25': rgba(0, 0, 0, 0.25), transparentize(getColor('primary'), 0.25),
+  // 'primary-a40': rgba(0, 0, 0, 0.4), transparentize(getColor('primary'), 0.4),
+  // 'primary-a55': rgba(0, 0, 0, 0.55), transparentize(getColor('primary'), 0.55),
+  // 'primary-a60': rgba(0, 0, 0, 0.6), transparentize(getColor('primary'), 0.60),
+  // 'primary-a65': rgba(0, 0, 0, 0.65), transparentize(getColor('primary'), 0.65),
+  // 'primary-a70': rgba(0, 0, 0, 0.7), transparentize(getColor('primary'), 0.7),
+  // 'primary-a76': rgba(0, 0, 0, 0.76), transparentize(getColor('primary'), 0.76),
+  // 'primary-a80': rgba(0, 0, 0, 0.80), transparentize(getColor('primary'), 0.80),
+  // 'primary-decontrasted': #494848, $tundora, // lighten(saturate(getColor('primary'), 0.69), 28.43)
+  // 'primary-light': #5f5f5f, $scorpion, // lighten(getColor('primary'), 37.25)
+  // 'primary-lighter': #7a7a7a;, $boulder, // lighten(getColor('primary'), 47.84)
+  // 'primary-lighter-a40': rgba(122, 122, 122, 0.4), transparentize(lighten(getColor('primary'), 47.84), 0.4),
+  // 'gray': #808080, $gray,
+  // 'gray2': #828282, darken(getColor('primary-inversed'), 49.02)
+  // 'primary-inversed-decontrasted': #fdfbec, $old-lace,
+  // // darken(saturate(adjust-hue(getColor('primary-inversed'), 53), 80.95), 4.12)
+  // 'primary-inversed-little-dark': #e5e5e5, $mercury,
+  // // darken(getColor('primary-inversed') 10.20)
+  // 'primary-inversed-medium-dark': #dadada, $alto,
+  // // darken(getColor('primary-inversed'), 14.51)
+  // 'primary-inversed-dark': #bababa, $silver,
+  // // darken(getColor('primary-inversed'), 27.06)
+  // 'primary-inversed-dark-a40': rgba(186, 186, 186, 0.4), transparentize(darken(getColor('primary-inversed'), 27.06), 0.4),
+  // 'primary-inversed-darker': #b4b4b4, $nobel,
+  // // darken(getColor('primary-inversed'), 29.41)
+    // 'primary-inversed-a80': rgba(255, 255, 255, 0.2) transparentize(getColor('primary-inversed'), 0.2)
+  // 'primary-inversed-a80': rgba(255, 255, 255, 0.8) transparentize(getColor('primary-inversed'), 0.8)
+
+// Варіації кольорів
+// $variations: (
+//   primary-light: (
+//     function: lighten,
+//     parameters: 37.25%
+//   ),
+//   primary-lighter: (
+//     function: lighten,
+//     parameters: 47.84%
+//   ),
+//   primary-inversed-little-dark: (
+//     function: darken,
+//     parameters: 10.20%
+//   ),
+//   primary-inversed-medium-dark: (
+//     function: darken,
+//     parameters: 14.51%
+//   ),
+//   primary-inversed-dark: (
+//     function: darken,
+//     parameters: 27.06%
+//   ),
+//   primary-inversed-darker: (
+//     function: darken,
+//     parameters: 29.41%
+//   ),
+//   primary-a25: (
+//     function: rgba,
+//     parameters: 0.25
+//   ),
+//   primary-a40: (
+//     function: rgba,
+//     parameters: 0.4
+//   ),
+//   primary-a65: (
+//     function: rgba,
+//     parameters: 0.65
+//   ),
+//   primary-a70: (
+//     function: rgba,
+//     parameters: 0.7
+//   ),
+//   primary-a76: (
+//     function: rgba,
+//     parameters: 0.76
+//   ),
+//   gray: (
+//     function: grayscale,
+//   ),
+//   shade: (
+//     function: mix,
+//     parameters: white 80%
+//   ),
+// );
+
+  // primary-lighter-a40: (
+  //   function: lighten
+  //     (
+  //       function: rgba,
+  //       parameters: 0.4
+  //     ),
+  //   parameters: 47.84%
+  // ),
+  // primary-decontrasted: (
+  //   function: lighten
+  //     (
+  //       function: saturate,
+  //       parameters: 0.69%
+  //     ),
+  //   parameters: 28.43%
+  // ),
+  // background-darker: (
+  //   function: lighten
+  //     (
+  //       function: saturate
+  //         (
+  //           function: adjust-hue,
+  //           parameters: 43deg
+  //         ),
+  //       parameters: 33.33%
+  //     ),
+  //   parameters: 4.12%
+  // ),
+  // primary-inversed-dark-a40: (
+  //   function: darken
+  //   (
+  //     function: rgba,
+  //     parameters: .4
+  //   ),
+  //   parameters: 27.06%
+  // ),
+  // accent-darker: (
+  //   function: darken
+  //     (
+  //       function: saturate,
+  //       parameters: 11.05%
+  //     ),
+  //   parameters: 24.51%
+  // ),
+  // accent-darker-a70: (
+  //   function: darken
+  //     (
+  //       function: saturate
+  //         (
+  //           function: rgba,
+  //           parameters: 0.7
+  //         ),
+  //       parameters: 11.05%
+  //     ),
+  //   parameters: 24.51%
+  // ),
+  // background-dark: (
+  //   function: darken
+  //     (
+  //       function: saturate
+  //         (
+  //           function: adjust-hue,
+  //           parameters: 51deg
+  //         ),
+  //       parameters: 46.43%
+  //     ),
+  //   parameters: 10.98%
+  // ),
+  // primary-inversed-decontrasted: (
+  //   function: darken
+  //     (
+  //       function: saturate
+  //         (
+  //           function: adjust-hue,
+  //           parameters: 53deg
+  //         ),
+  //       parameters: 80.95%
+  //     ),
+  //   parameters: 4.12%
+  // ),
+
+  // Кольори
+// $hokey-pokey: #cdb72b;
+// $buddha-gold: #c79002;
+
+// $island-spice: #fffdee;
+// $aths-special: #f0ecd6;
+// $eternity: #0e0c07;
+
+// $black: #000000;
+// $tundora: #494848;
+// $scorpion: #5f5f5f;
+// $boulder: #7a7a7a;
+
+// $gray: #808080;
+// $gray2: #828282;
+
+// $white: #ffffff;
+// $old-lace: #fdfbec;
+// $mercury: #e5e5e5;
+// $alto: #dadada;
+// $silver: #bababa;
+// $nobel: #b4b4b4;

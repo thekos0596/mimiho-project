@@ -1,0 +1,242 @@
+// background-images героїв
+.home-hero {
+  @include backgroundImageRetina(
+    $page: hero,
+    $section: home,
+    $part: mobile,
+    $file: hero-mob,
+    $webp-file: '../images/hero/home/desktop/hero-desk.webp'
+  );
+
+  @include respondTo('diapente') {
+    @include backgroundImageRetina(
+      $page: hero,
+      $section: home,
+      $part: tablet,
+      $file: hero-tab,
+      $webp-file: '../images/hero/home/desktop/hero-desk.webp'
+    );
+  }
+
+  @include respondTo('diapason') {
+    @include backgroundImageRetina(
+      $page: hero,
+      $section: home,
+      $part: desktop,
+      $file: hero-desk,
+      $webp-file: '../images/hero/home/desktop/hero-desk.webp'
+    );
+  }
+}
+
+.restaurant-hero {
+
+  @include backgroundImageRetina(
+    $page: hero,
+    $section: restaurant,
+    $part: mobile,
+    $file: hero-mob,
+    $webp-file: '../images/hero/restaurant/desktop/hero-desk.webp'
+  );
+
+  @include respondTo('diapente') {
+    @include backgroundImageRetina(
+      $page: hero,
+      $section: restaurant,
+      $part: tablet,
+      $file: hero-tab,
+      $webp-file: '../images/hero/restaurant/desktop/hero-desk.webp'
+    );
+  }
+
+  @include respondTo('diapason') {
+    @include backgroundImageRetina(
+      $page: hero,
+      $section: restaurant,
+      $part: desktop,
+      $file: hero-desk,
+      $webp-file: '../images/hero/restaurant/desktop/hero-desk.webp'
+    );
+  }
+}
+
+.hotel-hero {
+  @include backgroundImageRetina(
+    $page: hero,
+    $section: hotel,
+    $part: mobile,
+    $file: hero-mob,
+    $webp-file: '../images/hero/hotel/desktop/hero-desk.webp'
+  );
+  @include respondTo('diapente') {
+    @include backgroundImageRetina(
+      $page: hero,
+      $section: hotel,
+      $part: tablet,
+      $file: hero-tab,
+      $webp-file: '../images/hero/hotel/desktop/hero-desk.webp'
+    );
+  }
+  @include respondTo('diapason') {
+    @include backgroundImageRetina(
+      $page: hero,
+      $section: hotel,
+      $part: desktop,
+      $file: hero-desk,
+      $webp-file: '../images/hero/hotel/desktop/hero-desk.webp'
+    );
+  }
+}
+
+// lines & background-image секцій details
+.restaurant-details {
+  @include backgroundImageRetina( // rgba(0, 0, 0, 0.65), rgba(122, 122, 122, 0.6)
+    $gradient: linear-gradient(
+      to right,
+      transparentize(getColor('primary'), 0.35) 34%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.4) 34.1%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.4) 34.2%,
+      transparentize(getColor('primary'), 0.35) 34.2%,
+      transparentize(getColor('primary'), 0.35) 66%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.4) 66.1%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.4) 66.2%,
+      transparentize(getColor('primary'), 0.35) 66.2%,
+      transparentize(getColor('primary'), 0.35) 100%
+    ),
+    $page: home,
+    $section: restaurant-details,
+    $part: mobile,
+    $file: background-mob,
+    $webp-file: '../images/home/restaurant-details/desktop/background-desk.webp'
+  );
+
+  @include respondTo('diapente') { // rgba(0, 0, 0, 0.76), rgba(122, 122, 122, 0.6)
+    @include backgroundImageRetina(
+      $gradient: 
+      linear-gradient(
+      to right,
+      transparentize(getColor('primary'), 0.24) 27.1%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.4) 27.1%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.4) 27.2%,
+      transparentize(getColor('primary'), 0.24) 27.2%,
+      transparentize(getColor('primary'), 0.24) 49.9%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.4) 49.9%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.4) 50%,
+      transparentize(getColor('primary'), 0.24) 50%,
+      transparentize(getColor('primary'), 0.24) 72.8%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.4) 72.8%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.4) 72.9%,
+      transparentize(getColor('primary'), 0.24) 72.9%,
+      transparentize(getColor('primary'), 0.24) 100%
+    ),
+      $page: home,
+      $section: restaurant-details,
+      $part: tablet,
+      $file: background-tab,
+      $webp-file:
+        '../images/home/restaurant-details/desktop/background-desk.webp'
+    );
+  }
+  @include respondTo('diapason') { // rgba(0, 0, 0, 0.65), rgba(122, 122, 122, 0.6)
+    @include backgroundImageRetina(
+      $gradient: 
+      linear-gradient(
+      to right,
+      transparentize(getColor('primary'), 0.35) 26.4%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.4) 26.4%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.4) 26.5%,
+      transparentize(getColor('primary'), 0.35) 26.5%,
+      transparentize(getColor('primary'), 0.35) 49.9%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.4) 49.9%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.4) 50%,
+      transparentize(getColor('primary'), 0.35) 50%,
+      transparentize(getColor('primary'), 0.35) 73.5%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.4) 73.5%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.4) 73.6%,
+      transparentize(getColor('primary'), 0.35) 73.6%,
+      transparentize(getColor('primary'), 0.35) 100%
+    ),
+      $page: home,
+      $section: restaurant-details,
+      $part: desktop,
+      $file: background-desk,
+      $webp-file:
+        '../images/home/restaurant-details/desktop/background-desk.webp'
+    );
+  }
+}
+
+.hotel-details { // rgba(0, 0, 0, 0.7), rgba(122, 122, 122, 0.4)
+  @include backgroundImageRetina(
+    $gradient: 
+    linear-gradient(
+      to right,
+      transparentize(getColor('primary'), 0.3) 34%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.4) 34.1%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.4) 34.2%,
+      transparentize(getColor('primary'), 0.3) 34.2%,
+      transparentize(getColor('primary'), 0.3) 66%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.4) 66.1%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.4) 66.2%,
+      transparentize(getColor('primary'), 0.3) 66.2%,
+      transparentize(getColor('primary'), 0.3) 100%
+    ),
+    $page: hero,
+    $section: hotel,
+    $part: mobile,
+    $file: hero-mob,
+    $webp-file: '../images/hero/hotel/desktop/hero-desk.webp'
+  );
+  @include respondTo('diapente') { // rgba(0, 0, 0, 0.24), rgba(122, 122, 122, 0.6)
+    @include backgroundImageRetina(
+      $gradient: 
+      linear-gradient(
+        to right,
+        transparentize(getColor('primary'), 0.24) 27.1%,
+        transparentize(lighten(getColor('primary'), 47.84), 0.4) 27.1%,
+        transparentize(lighten(getColor('primary'), 47.84), 0.4) 27.2%,
+        transparentize(getColor('primary'), 0.24) 27.2%,
+        transparentize(getColor('primary'), 0.24) 49.9%,
+        transparentize(lighten(getColor('primary'), 47.84), 0.4) 49.9%,
+        transparentize(lighten(getColor('primary'), 47.84), 0.4) 50%,
+        transparentize(getColor('primary'), 0.24) 50%,
+        transparentize(getColor('primary'), 0.24) 72.8%,
+        transparentize(lighten(getColor('primary'), 47.84), 0.4) 72.8%,
+        transparentize(lighten(getColor('primary'), 47.84), 0.4) 72.9%,
+        transparentize(getColor('primary'), 0.24) 72.9%,
+        transparentize(getColor('primary'), 0.24) 100%
+      ),
+      $page: hero,
+      $section: hotel,
+      $part: tablet,
+      $file: hero-tab,
+      $webp-file: '../images/hero/hotel/desktop/hero-desk.webp'
+    );
+  }
+  @include respondTo('diapason') { // rgba(0, 0, 0, 0.7), rgba(122, 122, 122, 0.6)
+    @include backgroundImageRetina(
+      $gradient: 
+      linear-gradient(
+      to right,
+      transparentize(getColor('primary'), 0.3) 26.4%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.4) 26.4%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.4) 26.5%,
+      transparentize(getColor('primary'), 0.3) 26.5%,
+      transparentize(getColor('primary'), 0.3) 49.9%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.4) 49.9%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.4) 50%,
+      transparentize(getColor('primary'), 0.3) 50%,
+      transparentize(getColor('primary'), 0.3) 73.5%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.4) 73.5%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.4) 73.6%,
+      transparentize(getColor('primary'), 0.3) 73.6%,
+      transparentize(getColor('primary'), 0.3) 100%
+    ),
+      $page: hero,
+      $section: hotel,
+      $part: desktop,
+      $file: hero-desk,
+      $webp-file: '../images/hero/hotel/desktop/hero-desk.webp'
+    );
+  }
+}

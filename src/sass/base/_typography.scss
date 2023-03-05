@@ -1,0 +1,9 @@
+body {
+    font-family: $text-font-stack;
+    color: getColor('primary');
+    background-color: getColor('background');
+
+    &.lock {
+        overflow: hidden;
+    }
+}

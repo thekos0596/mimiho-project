@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ukr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./favicon/favicon.svg" sizes="32x32" />
+    <link rel="icon" href="./favicon/favicon.svg" sizes="192x192" />
+    <link rel="apple-touch-icon" href="./favicon/favicon.svg" />
+    <title>Ресторан</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./sass/index.scss" />
+  </head>
+  <body class="restaurant">
+    <include src="./partials/header.html"></include>
+    <main class="body-scroll">
+      <!-- Олена -->
+      <include src="./partials/restaurant-hero.html"></include>
+      <!-- Надія -->
+      <include src="./partials/kitchen-about.html"></include>
+      <!-- Олег -->
+      <include src="./partials/menu.html"></include>
+    </main>
+    <include src="./partials/footer.html"></include>
+    <include src="./partials/modals.html"></include>
+    <!-- Денис -->
+    <include src="./partials/scroll-up.html"></include>
+
+    <script src="../node_modules/swiper/swiper-bundle.min.js"></script>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,210 @@
+.room-hero {
+  width: 100%;
+  height: 740px;
+  padding: 0;
+  overflow: hidden;
+  text-align: left;
+
+  @include respondTo('diapente') {
+    height: 720px;
+  }
+}
+
+// Декоративне оформлення затемнення зверху сторінки
+.room-hero__decor {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 143px;
+    background-image: linear-gradient(
+      (180deg, #000000 0%, rgba(0, 0, 0, 0.55) 54.17%, rgba(0, 0, 0, 0) 100%)
+    ); // getColor('primary'), rgba(0, 0, 0, 0.55), getColor('primary')
+
+    @include respondTo('diapente') {
+      height: 100px;
+    }
+    @include respondTo('diapason') {
+      height: 147px;
+    }
+  }
+}
+
+// Стилі заголовків слайдів
+.room-hero__title {
+  @extend %marginPaddingReset;
+  margin-bottom: 14px;
+  font-family: $text-times-font;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.14;
+  letter-spacing: 0.05em;
+  color: getColor('primary-inversed');
+  text-transform: uppercase;
+  text-shadow: 0px 4px 3px transparentize(getColor('primary'), 0.6),
+    0px 8px 13px transparentize(getColor('primary'), 0.9),
+    0px 18px 23px transparentize(getColor('primary'), 0.9); // rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)
+
+  @include respondTo('diapente') {
+    font-size: 36px;
+    margin-bottom: 24px;
+  }
+
+  // Анімація заголовку
+  .slide-hero--luxe.swiper-slide-active &,
+  .slide-hero--triple.swiper-slide-active &,
+  .slide-hero--double.swiper-slide-active & {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    @include transition(opacity, transform);
+  }
+
+  .slide-hero--luxe.swiper-slide-prev &,
+  .slide-hero--triple.swiper-slide-prev &,
+  .slide-hero--double.swiper-slide-prev &,
+  .slide-hero--luxe.swiper-slide-next &,
+  .slide-hero--triple.swiper-slide-next &,
+  .slide-hero--double.swiper-slide-next & {
+    transform: translate(0px, 120%);
+    opacity: 0;
+    @include transition(opacity, transform);
+  }
+
+  // Нижній регістр заголовку
+  &--transform {
+    text-transform: lowercase;
+  }
+}
+
+// Опис під заголовками
+.room-hero__descr {
+  max-width: 325px;
+  color: getColor('primary-inversed');
+  text-shadow: 0px 4px 3px transparentize(getColor('primary'), 0.4),
+    0px 8px 13px transparentize(getColor('primary'), 0.1),
+    0px 18px 23px transparentize(getColor('primary'), 0.1); // rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)
+  transform: translate(0px, 120%);
+  opacity: 0;
+  @include transition(opacity, transform);
+
+  @include respondTo('diapente') {
+    max-width: 400px;
+  }
+
+  // Оформлення опису слайду Трьохмісний номер
+  &--accent {
+    text-shadow: getColor('primary') 0.1em 0.1em 0.2em;
+  }
+
+  // Анімація опису
+  .slide-hero--luxe.swiper-slide-active &,
+  .slide-hero--triple.swiper-slide-active &,
+  .slide-hero--double.swiper-slide-active & {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    @include transition(opacity, transform);
+    transition-delay: 0.4s;
+  }
+
+  .slide-hero--luxe.swiper-slide-prev &,
+  .slide-hero--triple.swiper-slide-prev &,
+  .slide-hero--double.swiper-slide-prev &,
+  .slide-hero--luxe.swiper-slide-next &,
+  .slide-hero--triple.swiper-slide-next &,
+  .slide-hero--double.swiper-slide-next & {
+    transform: translate(0px, 120%);
+    opacity: 0;
+    @include transition(opacity, transform);
+  }
+}
+
+// Стилі абсолютно спозиціонованого блоку location
+.room-hero__location {
+  position: absolute;
+  z-index: 10;
+
+  &:hover {
+    border: 1px solid darken(saturate(getColor('accent'), 11.05), 24.51); // #c79002
+  }
+
+  @include respondTo('diapente') {
+    bottom: 24px;
+    left: 47px;
+    background-color: transparentize(
+      getColor('primary'),
+      0.6
+    ); // rgba(0, 0, 0, 0.4)
+  }
+  @include respondTo('diapason') {
+    display: none;
+  }
+}
+
+// Іконка location
+.room-hero__point {
+  fill: transparentize(getColor('accent'), 0.3); // rgba(243, 198, 83, 0.7)
+}
+
+// Посилання на адресу
+.room-hero__link {
+  .room-hero__location:hover & {
+    color: getColor('primary-inversed');
+  }
+}
+
+// Абсолютно спозиціонований блок socials на сторінці room-hero
+.room-hero__socials {
+  z-index: 10;
+  position: absolute;
+  bottom: 14px;
+  left: 15px;
+
+  @include respondTo('tritonus') {
+    display: block;
+  }
+
+  @include respondTo('diapente') {
+    bottom: 38px;
+    left: 372px;
+  }
+
+  @include respondTo('diapason') {
+    display: none;
+  }
+}
+
+.room-hero__socials-item {
+  @include respondTo('tritonus') {
+    & + & {
+      margin-top: 8px;
+    }
+  }
+}
+
+// Абсолютно спозиціонована кнопка виклику модалки
+.room-hero__button {
+  position: absolute;
+  z-index: 10;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include respondTo('tritonus') {
+    bottom: 40px;
+    left: 54%;
+    transform: translateX(-50%);
+  }
+
+  @include respondTo('diapente') {
+    right: 47px;
+    bottom: 64px;
+  }
+
+  @include respondTo('diapason') {
+    right: 85px;
+    bottom: 66px;
+  }
+}

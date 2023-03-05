@@ -1,0 +1,19 @@
+// Стилі блоку logo
+.hotel-details__logo {
+  text-align: right;
+  margin-right: -14px;
+
+  @include respondTo('diapente') {
+    margin-right: -21px;
+  }
+}
+
+// Стилі заголовку секції
+.hotel-details__title {
+  text-align: right;
+  margin-bottom: 20px;
+
+  @include respondTo('diapente') {
+    margin-bottom: 8px;
+  }
+}

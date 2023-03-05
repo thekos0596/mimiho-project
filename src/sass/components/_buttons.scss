@@ -1,0 +1,88 @@
+// Головні стилі кнопок
+.button {
+    display: block;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.219;
+    letter-spacing: 0.02em;
+    color: getColor('accent');
+    border-radius: 25px;
+    cursor: pointer;
+    @include transition(background-color, border-color); 
+
+    &:focus, &:hover, &:active {
+        background-color: getColor('primary-inversed');
+        border-color: getColor('accent');
+    }
+}
+
+// Кнопка оформлення бронювання модалок та секції amenities сторінки room.html
+.button-reserve {
+  width: 100%;
+  display: block;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.219;
+  text-transform: uppercase;
+  color: getColor('primary-inversed');
+  cursor: pointer;
+  @include transition(color, background-color);
+
+  &:focus, &:hover, &:active {
+      background-color: getColor('accent');
+      color: getColor('primary');
+  }
+
+  @include respondTo('diapente') {
+      font-size: 24px;
+  }
+}
+
+// Кнопки виклику модалок та переходу на сторінку room.html
+.activity-button {
+  @extend .button;
+    @extend %link;
+    text-align: center;
+    @include buttonSize(
+      $padding-top: 14px,
+      $padding-bottom: 14px,
+      $section-button: true
+    );
+  
+    @include respondTo('tritonus') {
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    // Прозорі кнопки меншого розміру
+    &--smaller {
+      @include buttonPlace($transparent-button: true);
+      @include buttonSize($booking-room: true, $padding-top: 15px, $padding-bottom: 13px);
+    }
+  
+    // Прозорі кнопки
+    &--transparent {
+      @include buttonPlace($transparent-button: true);
+    }
+  
+    // Кнопки світлих секцій сторінки hotel.html
+    &--light-rooms {
+      @include buttonPlace($light-rooms-button: true);
+    }
+  
+    // Кнопки темнішої секції сторінки hotel.html
+    &--dark-rooms {
+      @include buttonPlace($dark-rooms-button: true);
+    }
+  
+    // Кнопка секції menu
+    &--menu {
+      @include buttonPlace($menu-button: true);
+
+      @include respondTo('diapente') {
+        margin-left: auto;
+      }
+    }
+  }

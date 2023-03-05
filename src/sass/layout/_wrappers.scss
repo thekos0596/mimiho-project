@@ -1,0 +1,321 @@
+// Обгортка кнопок та блока локації у героях основних сторінок
+.hero-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include respondTo('diapente') {
+    justify-content: space-between;
+  }
+}
+
+// Обгортка текстових елементів секцій details головної сторінки
+.details-contentbox {
+  margin-bottom: 48px;
+
+  @include respondTo('semiditonus') {
+    margin-bottom: 30px;
+  }
+
+  @include respondTo('diapente') {
+    margin-bottom: 40px;
+  }
+
+  &--left {
+    margin-left: 125px;
+
+    @include respondTo('semiditonus') {
+      margin-left: 31vw;
+    }
+
+    @include respondTo('diapente') {
+      margin-left: 231px;
+    }
+
+    @include respondTo('diapason') {
+      margin-left: 253px;
+    }
+  }
+
+  &--right {
+    margin-right: 129px;
+
+    @include respondTo('semiditonus') {
+      margin-right: 31vw;
+    }
+
+    @include respondTo('diapente') {
+      margin-right: 231px;
+    }
+
+    @include respondTo('diapason') {
+      margin-right: 253px;
+    }
+  }
+}
+
+// Обгортка контенту секцій about головної сторінки та сторінки restaurant.html
+.about-contentbox {
+  display: flex;
+  align-items: center;
+
+  @include respondTo('tritonus') {
+    margin-bottom: 32px;
+  }
+
+  &--right {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+// Контейнери для анімованого тексту секцій about та rooms
+.animated-text {
+  &--first {
+    margin-bottom: 28px;
+
+    @include respondTo('semiditonus') {
+      margin-bottom: 7vw;
+    }
+
+    @include respondTo('diapente') {
+      margin-bottom: 142px;
+    }
+
+    @include respondTo('diapason') {
+      margin-bottom: 162px;
+    }
+  }
+
+  &--second {
+    max-width: 163px;
+
+    @include respondTo('semiditonus') {
+      max-width: 130px;
+    }
+
+    @include respondTo('diapente') {
+      max-width: 312px;
+    }
+
+    &--left {
+      margin-right: 21px;
+  
+      @include respondTo('diapente') {
+        margin-right: 48px;
+      }
+  
+      @include respondTo('diapason') {
+        margin-bottom: 56px;
+        margin-right: 45px;
+      }
+    }
+  
+    &--right {
+      margin-left: 20px;
+
+      @include respondTo('semiditonus') {
+        margin-left: 12px;
+      }
+  
+      @include respondTo('diapente') {
+        margin-top: 7px;
+        margin-left: 48px;
+      }
+  
+      @include respondTo('diapason') {
+        margin-bottom: 68px;
+        margin-left: 32px;
+      }
+    }
+  }
+
+  &--rooms {
+    margin-bottom: 32px;
+
+    @include respondTo('diapente') {
+      margin-bottom: 176px;
+    }
+
+    @include respondTo('diapason') {
+      margin-bottom: 188px;
+    }
+  }
+}
+
+// Перша обгортка для контентних картинок у секціях about і секціях номерів
+.imgbox {
+  max-width: 244px;
+  box-shadow: 2px 2px 60px 2px transparentize(getColor('primary'), 0.75); // rgba(0, 0, 0, 0.25)
+  border-radius: 2px;
+  overflow: hidden;
+
+  @include respondTo('semiditonus') {
+    max-width: 192px;
+  }
+
+  @include respondTo('diapente') {
+    max-width: 400px;
+    position: absolute;
+    top: -152px;
+    right: 112px;
+    box-shadow: 5px 5px 70px 17px transparentize(getColor('primary'), 0.75); // rgba(0, 0, 0, 0.25)
+  }
+
+  @include respondTo('diapason') {
+    top: -153px;
+    right: 180px;
+    max-width: 460px;
+  }
+
+  // Обгортка картинок світлих секцій
+  &--about {
+    margin-left: auto;
+    @include respondTo('tritonus') {
+      margin-bottom: 32px;
+    }
+  }
+
+  &--left {
+    @include respondTo('tritonus') {
+      margin-bottom: 32px;
+    }
+
+    @include respondTo('diapente') {
+      top: -144px;
+      left: 112px;
+    }
+
+    @include respondTo('diapason') {
+      left: 180px;
+    }
+  }
+
+  // Обгортка картинок секцій номерів
+  &--rooms {
+    margin-left: auto;
+
+    @include respondTo('tritonus') {
+      margin-bottom: 32px;
+    }
+
+    @include respondTo('diapente') {
+      top: -94px;
+    }
+
+    @include respondTo('diapason') {
+      top: -105px;
+    }
+  }
+
+  &--rooms-left {
+    @include respondTo('tritonus') {
+      margin-bottom: 32px;
+    }
+
+    @include respondTo('diapente') {
+      top: -96px;
+      left: 112px;
+    }
+
+    @include respondTo('diapason') {
+      top: -105px;
+      left: 180px;
+    }
+  }
+}
+
+// Друга обгортка для контентних картинок у секціях
+.imgbox-second {
+  max-width: 200px;
+  box-shadow: 2px 2px 60px 2px transparentize(getColor('primary'), 0.75); // rgba(0, 0, 0, 0.25)
+  border-radius: 2px;
+  overflow: hidden;
+
+  @include respondTo('semiditonus') {
+    max-width: 130px;
+  }
+
+  @include respondTo('diapente') {
+    max-width: 350px;
+  }
+
+  @include respondTo('diapason') {
+    max-width: 460px;
+  }
+}
+
+// Обгортка свайперу та кнопок секцій about, details та секцій номерів
+.interactive {
+  &--about {
+    @include respondTo('diapente') {
+      transform: translateY(-28px);
+      margin-bottom: -28px;
+    }
+
+    @include respondTo('diapason') {
+      transform: translateY(-147px);
+      margin-bottom: -147px;
+    }
+  }
+
+  &--about-right {
+    @include respondTo('diapente') {
+      margin-right: 13px;
+    }
+
+    @include respondTo('diapason') {
+      margin-right: 0;
+    }
+  }
+
+  &--details {
+    @include respondTo('diapente') {
+      display: flex;
+      align-items: flex-end;
+      gap: 29px;
+      // margin-right: 3px;
+    }
+
+    @include respondTo('diapason') {
+      gap: 32px;
+      margin-left: -33px;
+    }
+  }
+
+  &--rooms {
+    @include respondTo('diapente') {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &--right {
+    @include respondTo('ditonus') {
+      margin-right: -15px;
+    }
+
+    @include respondTo('diapente') {
+      margin-right: 0;
+      flex-direction: row-reverse;
+    }
+  }
+
+  &--left {
+    @include respondTo('tritonus') {
+      margin-left: -15px;
+    }
+
+    @include respondTo('diapente') {
+      margin-right: 0;
+    }
+  }
+}
+
+.interactive--details.interactive--right {
+
+  @include respondTo('diapason') {
+    margin-right: -33px;
+  }
+}

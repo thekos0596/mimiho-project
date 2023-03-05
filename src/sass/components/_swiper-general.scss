@@ -1,0 +1,156 @@
+.swiper-wrapper {
+  @extend %list;
+}
+
+.swiper-slide__image {
+  border-radius: 2px;
+  overflow: hidden;
+  background-color: darken(getColor('primary-inversed'), 14.51); // #dadada
+
+  &--content {
+    box-shadow: 2px 2px 60px 2px transparentize(getColor('primary'), 0.75); // rgba(0, 0, 0, 0.25)
+  }
+}
+
+// Загальні стилі кнопок навігації слайдером
+.swiper-arrows {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  gap: 32px;
+
+  // Кнопки світлих секцій
+  &--light {
+    margin-top: 20px;
+
+    @include respondTo('diapente') {
+      margin-top: 32px;
+    }
+
+    @include respondTo('diapason') {
+      margin-top: 40px;
+    }
+
+    // Розташовані справа
+    &--right {
+      justify-content: flex-end;
+
+      @include respondTo('tritonus') {
+        margin-right: 15px;
+      }
+
+      @include respondTo('diapente') {
+        margin-right: 13px;
+      }
+    }
+
+    // Розташовані зліва
+    &--left {
+      @include respondTo('tritonus') {
+        margin-left: 15px;
+      }
+    }
+  }
+
+  // Кнопки темних секцій
+  &--dark {
+    margin-top: 16px;
+
+    @include respondTo('diapente') {
+      margin-top: 24px;
+    }
+
+    // Розташовані зліва на слайдері, який здвинутий вправо
+    &--dark-right {
+      @include respondTo('semiditonus') {
+        // margin-left: 0;
+      }
+
+      @include respondTo('ditonus') {
+        margin-left: 25px;
+      }
+
+      @include respondTo('diapente') {
+        margin-left: 0;
+      }
+    }
+
+    // Розташовані справа на слайдері, який здвинутий вліво
+    &--dark-left {
+      justify-content: flex-end;
+
+      @include respondTo('tritonus') {
+        margin-right: 25px;
+      }
+    }
+  }
+
+  // Кнопки секцій номерів
+  &--rooms-left {
+    @include respondTo('tritonus') {
+      margin-left: 15px;
+    }
+
+    @include respondTo('diapente') {
+      justify-content: flex-end;
+    }
+  }
+
+  &--rooms-right {
+    @include respondTo('tritonus') {
+      margin-right: 15px;
+      justify-content: flex-end;
+    }
+  }
+}
+
+// Скидування дефолтних стилей свайперу
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+
+// Перевизначення дефолтних стилей свайперу
+.swiper-button-next,
+.swiper-button-prev {
+  position: relative;
+  left: unset;
+  right: unset;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  margin-top: 0;
+  @include transition(fill);
+}
+
+.swiper-button-next {
+  &:hover,
+  &:focus,
+  &:active {
+    fill: getColor('accent');
+  }
+
+  &--black {
+    fill: getColor('primary');
+  }
+
+  &--white {
+    fill: getColor('primary-inversed');
+  }
+}
+
+.swiper-button-prev {
+  &:hover,
+  &:focus,
+  &:active {
+    fill: getColor('accent');
+  }
+
+  &--black {
+    fill: getColor('primary');
+  }
+
+  &--white {
+    fill: getColor('primary-inversed');
+  }
+}

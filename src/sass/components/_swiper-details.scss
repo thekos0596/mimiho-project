@@ -1,0 +1,43 @@
+.swiper-container {
+
+  // Відступ між елементами управління слайдером та кнпоками виклику модалок
+  &--interactive {
+
+    @include respondTo('tritonus') {
+      margin-bottom: 32px;
+    }
+  }
+}
+
+// Свайпер секцій details головної сторінки
+.swiper-details {
+  max-width: 374px;
+  width: 100%;
+  overflow: hidden;
+
+  @include respondTo('semiditonus') {
+    max-width: 320px;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+  }
+
+  @include respondTo('diapente') {
+    max-width: 662px;
+  }
+
+  @include respondTo('diapason') {
+    max-width: 875px;
+  }
+
+  &--right {
+
+    @include respondTo('tritonus') {
+      margin-left: auto;
+    }
+  }
+
+  &--left {
+
+    @include respondTo('tritonus') {
+      margin-right: auto;
+    }
+  }
+}

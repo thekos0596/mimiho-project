@@ -1,0 +1,120 @@
+// Стилі секції
+.amenities {
+  @include respondTo('diapente') {
+    padding-top: 48px;
+  }
+
+  @include respondTo('heptachordium maius') {
+    background-image: none;
+  }
+
+  @include respondTo('diapason') {
+    padding-bottom: 48px;
+  }
+}
+
+// Обгортка контенту секції
+.amenities__description {
+  margin-bottom: 32px;
+
+  @include respondTo('diapente') {
+    margin-bottom: 40px;
+  }
+}
+
+// Заголовок секції
+.amenities-title {
+  @extend %marginPaddingReset;
+  font-family: $text-times-font;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.16;
+  margin-bottom: 16px;
+}
+
+// Окремі блоки контенту
+.amenities__article {
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+}
+
+.amenities__item {
+  overflow: hidden;
+}
+
+// Опис під заголовком секції
+.amenities__specification {
+  margin-bottom: 32px;
+
+  @include respondTo('diapente') {
+    max-width: 757px;
+  }
+}
+
+// Підзаголовки окремих блоків опису
+.amenities__subtitle {
+  margin-bottom: 16px;
+}
+
+// Відступ між внутрішніми абзацами у блоках опису
+.amenities__margin {
+  @include respondTo('tritonus') {
+    margin-bottom: 16px;
+  }
+}
+
+// Стилі кнопки бронювання
+$enable-rounded: true;
+
+.amenities__button {
+  @include buttonSize(
+    $max-width: 434px,
+    $padding-top: 18px,
+    $padding-bottom: 18px
+  );
+  @include buttonReserve;
+  @include buttonPlace;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  @include respondTo('diapente') {
+    margin-bottom: 32px;
+    margin-left: auto;
+  }
+}
+
+// Посилання для повернення до сторінку hotel.html
+.amenities__return {
+  @extend %link;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 12px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.219;
+  letter-spacing: 0.02em;
+  color: darken(saturate(getColor('accent'), 11.05), 24.51); // #c79002
+  @include transition(fill, color);
+
+  @include respondTo('diapente') {
+    font-size: 20px;
+    justify-content: flex-end;
+  }
+
+  &:focus,
+  &:hover,
+  &:active {
+    color: getColor('accent');
+    fill: transparent;
+  }
+}
+
+// Іконка посилання повернення на сторінку hotel.html
+.amenities__icon {
+  @extend %icon;
+}

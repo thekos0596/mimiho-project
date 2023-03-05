@@ -1,0 +1,120 @@
+.footer {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: lighten(saturate(adjust-hue(getColor('primary'), 43), 33.33), 4.12); // #0e0c07;
+  max-width: 414px;
+
+  @include respondTo('diapente') {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    max-width: 1024px;
+  }
+
+  @include respondTo('diapason') {
+    max-width: 1280px;
+  }
+}
+
+// Обгортка лого у футері
+.footer__logo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include respondTo('tritonus') {
+    grid-row: 1 / 3;
+  }
+}
+
+// Блок навігації сайтом у футері
+.footer__nav {
+  padding-left: 7px;
+
+  @include respondTo('tritonus') {
+    margin-bottom: 32px;
+  }
+
+  @include respondTo('diapente') {
+    padding-left: 8px;
+  }
+}
+
+// Елементи списку навігації
+.footer__nav-item {
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  @include respondTo('diapente') {
+    max-width: 144px;
+    width: 100%;
+  }
+}
+
+// Стилі блоку socials у футері
+.footer__socials {
+  padding-left: 7px;
+  gap: 20px;
+
+  @include respondTo('diapente') {
+    align-items: flex-start !important;
+    gap: 12px;
+    flex-direction: column-reverse;
+    padding-left: 8px;
+  }
+}
+
+.footer__socials-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include respondTo('diapente') {
+    padding: 7px 12px;
+    color: getColor('accent') !important;
+    border: 0.5px solid getColor('accent');
+    border-radius: 2px;
+    @include transition(border-color, color);
+
+    &:focus,
+    &:hover {
+      color: darken(saturate(getColor('accent'), 11.05), 24.51) !important; // #c79002
+      border-color: darken(saturate(getColor('accent'), 11.05), 24.51) !important; // #c79002
+    }
+  }
+}
+
+// Смужки через псевдоелементи
+// .footer__lines {
+//     position: absolute;
+//     top: 0;
+//     left: 70%;
+//     transform: translateX(-50%);
+//     width: 1px;
+//     height: 100%;
+//     filter: blur(0.5px);
+//     background-color: transparentize(lighten(getColor('primary'), 47.84), 0.4); // rgba(122, 122, 122, 0.4);
+//     z-index: 2;
+
+//     @include respondTo('diapente') {
+//       left: 50%;
+//     }
+
+//   &::after {
+//     @include respondTo('diapente') {
+//       content: '';
+//       position: absolute;
+//       top: 0;
+//       right: -23vw;
+//       width: 1px;
+//       height: 100%;
+//       filter: blur(0.5px);
+//       background-color: transparentize(lighten(getColor('primary'), 47.84), 0.4); // rgba(122, 122, 122, 0.4);
+//       z-index: 2;
+//     }
+//   }
+// }

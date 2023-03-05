@@ -1,0 +1,75 @@
+// Блок соцмереж
+.socials {
+  @extend %list;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  // Соцмережі у хедері
+  &--header {
+    margin-left: auto;
+
+    @include respondTo('heptachordium maius') {
+      display: none;
+    }
+  }
+
+  // Соцмережі у героях
+  &--hero {
+    margin-top: 58px;
+
+    @include respondTo('diapente') {
+      margin-top: 25px;
+    }
+
+    @include respondTo('diapason') {
+      display: none;
+    }
+  }
+
+  &__item {
+    .footer__socials & {
+      @include respondTo('diapente') {
+        max-width: 144px;
+        width: 100%;
+      }
+    }
+  }
+
+  // Посилання на соцмережі
+  &__link {
+    @extend %link;
+    font-family: $text-font-stack;
+    font-size: 16px;
+    line-height: 1.219;
+    letter-spacing: 0.02em;
+    color: transparentize(getColor('accent'), 0.3); // rgba(243, 198, 83, 0.7)
+    @include transition(color);
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: getColor('accent');
+    }
+  }
+
+  // Назви соцмереж у футері
+  &__text {
+    @extend %marginPaddingReset;
+    display: none;
+
+    @include respondTo('diapente') {
+      display: block;
+    }
+  }
+
+  // Іконки соцмереж
+  &__icon {
+    @extend %icon;
+
+    @include respondTo('semiditonus') {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

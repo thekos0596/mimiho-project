@@ -1,0 +1,7 @@
+// Стилі блоу logo
+.restaurant-about__logo {
+
+  @include respondTo('diapason') {
+    color: darken(getColor('primary-inversed'), 49.02);  // #828282;
+  }
+}

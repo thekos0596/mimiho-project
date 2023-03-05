@@ -1,0 +1,47 @@
+// Список кнопок секцій hero
+.hero-buttons {
+  @extend %list;
+
+  @include respondTo('diapente') {
+    display: flex;
+    gap: 40px;
+  }
+
+  @include respondTo('diapason') {
+    gap: 60px;
+  }
+
+  &__item {
+    @include respondTo('tritonus') {
+      & + & {
+        margin-top: 24px;
+      }
+    }
+  }
+}
+
+// Список кнопок темних секцій головної сторінки
+.details-buttonbox {
+  @extend %list;
+
+  @include respondTo('diapente') {
+    margin-bottom: 56px;
+  }
+
+  &__item {
+    & + & {
+      margin-top: 16px;
+    }
+  }
+}
+
+// Список кнопок секцій номерів
+.hotel-buttonbox {
+  @extend %list;
+
+  &__item {
+    & + & {
+      margin-top: 16px;
+    }
+  }
+}

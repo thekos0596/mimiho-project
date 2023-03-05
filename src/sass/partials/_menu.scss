@@ -1,0 +1,242 @@
+// Стилі секції
+.menufood {
+  margin: 0 auto;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  @include respondTo('diapente') {
+    background-color: darken(
+      saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43),
+      10.98
+    ); // #f0ecd6;
+    padding-top: 58px;
+    padding-bottom: 40px;
+
+    @include respondTo('diapason') {
+      padding-bottom: 60px;
+    }
+  }
+}
+
+// Заголовок секції menu
+.menufood__title {
+  @extend .main-tagline;
+  color: getColor('primary');
+  margin-bottom: 32px;
+
+  @include respondTo('diapente') {
+    margin-bottom: 40px;
+  }
+}
+
+// Обгортка таблиці меню
+.menufood__wrapper {
+  margin-bottom: 32px;
+
+  @include respondTo('diapente') {
+    display: flex;
+    column-gap: 88px;
+    margin-bottom: 40px;
+  }
+
+  @include respondTo('diapason') {
+    margin-bottom: 31px;
+    gap: 140px;
+  }
+}
+
+// Блоки меню
+.menufood__menu {
+  table-layout: fixed;
+  border-spacing: 0 4px;
+
+  @include respondTo('tritonus') {
+    margin-bottom: 16px;
+  }
+
+  @include respondTo('diapente') {
+    margin-bottom: 20px;
+  }
+
+  @include respondTo('diapason') {
+    border-spacing: 0 12px;
+  }
+
+  &--lasttable {
+    margin-bottom: 0;
+  }
+
+  &--secondtable {
+    @include respondTo('diapente') {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Підзаголовки кожної підтаблиці
+.menufood__subtitle {
+  font-family: $text-times-font;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: left;
+  padding-bottom: 8px;
+  width: 100%;
+  padding-top: 0;
+
+  @include respondTo('diapason') {
+    font-size: 24px;
+  }
+}
+
+// Назва блюд, десертів та напоїв
+.menufood__dish {
+  text-align: left;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.219;
+  letter-spacing: 0.02em;
+  width: 224px;
+  padding-top: 4px;
+
+  @include respondTo('semiditonus') {
+    max-width: 190px;
+    width: 100%;
+  }
+
+  @include respondTo('diapente') {
+    width: 226px;
+  }
+
+  @include respondTo('diapason') {
+    width: 258px;
+    font-size: 16px;
+    padding-top: 8px;
+  }
+
+  // Десерти
+  &--dessert {
+    width: 254px;
+
+    @include respondTo('diapente') {
+      width: 279px;
+    }
+
+    @include respondTo('diapason') {
+      width: 318px;
+    }
+  }
+
+  // Напої
+  &--after {
+    width: 242px;
+
+    @include respondTo('diapente') {
+      width: 269px;
+    }
+
+    @include respondTo('diapason') {
+      width: 319px;
+    }
+  }
+}
+
+// Вага блюд
+.menufood__weight {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.219;
+  letter-spacing: 0.02em;
+  vertical-align: center;
+  text-align: center;
+  width: 98px;
+
+  @include respondTo('semiditonus') {
+    font-size: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @include respondTo('diapente') {
+    width: 123px;
+  }
+
+  @include respondTo('diapason') {
+    width: 156px;
+  }
+
+  // Вага салатів
+  &--salads {
+    @include respondTo('diapente') {
+      width: 143px;
+    }
+
+    @include respondTo('diapason') {
+      width: 156px;
+    }
+  }
+
+  // Вага десертів
+  &--dessert {
+    text-align: left;
+    width: 70px;
+
+    @include respondTo('diapente') {
+      width: 91px;
+    }
+
+    @include respondTo('diapason') {
+      width: 98px;
+    }
+  }
+
+  // Грамаж напоїв
+  &--after {
+    text-align: left;
+    width: 83px;
+
+    @include respondTo('diapente') {
+      width: 102px;
+    }
+  }
+}
+
+// Ціна блюд
+.menufood__price {
+  vertical-align: center;
+  text-align: right;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.219;
+  letter-spacing: 0.02em;
+
+  @include respondTo('semiditonus') {
+    font-size: 12px;
+  }
+
+  @include respondTo('diapason') {
+    font-size: 16px;
+  }
+}
+
+// Опис блюд
+.menufood__text {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.219;
+  letter-spacing: 0.02em;
+  width: 224px;
+
+  @include respondTo('semiditonus') {
+    max-width: 190px;
+    width: 100%;
+  }
+
+  @include respondTo('diapente') {
+    width: 226px;
+  }
+
+  @include respondTo('diapason') {
+    width: 258px;
+  }
+}

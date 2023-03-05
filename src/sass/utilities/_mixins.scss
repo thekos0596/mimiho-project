@@ -1,0 +1,169 @@
+//Міксин, який виводить необхідну точку злому
+@mixin respondTo($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. " + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+// Міксин для transition
+@mixin transition($props...) {
+  -webkit-transition-property: $props;
+  -o-transition-property: $props;
+  transition-property: $props;
+  -webkit-transition-duration: 700ms;
+  -o-transition-duration: 700ms;
+  transition-duration: 700ms;
+  -webkit-transition-timing-function: $timing-function;
+  -o-transition-timing-function: $timing-function;
+  transition-timing-function: $timing-function;
+}
+
+// Міксин виведення розміру кнопки
+@mixin buttonSize(
+  $width: null,
+  $max-width: null,
+  $padding-top: null,
+  $padding-bottom: null,
+  $booking-room: false,
+  $price-button: false,
+  $section-button: false
+) {
+  padding-top: $padding-top;
+  padding-bottom: $padding-bottom;
+  @if $booking-room or $price-button {
+    width: 232px;
+  } @else if $section-button {
+    width: 236px;
+  } @else {
+    width: $width;
+    max-width: $max-width;
+  }
+}
+
+// Міксин визначення деяких стилей кнопок відносно місця їх положення
+@mixin buttonPlace(
+  $transparent-button: false,
+  $light-rooms-button: false,
+  $dark-rooms-button: false,
+  $menu-button: false
+) {
+  @if $transparent-button {
+    background-color: transparentize(getColor('primary'), 0.6);
+    border: 2px solid getColor('primary-inversed');
+  } @else if $light-rooms-button {
+    border: 2px solid getColor('background');
+    background-color: getColor('primary');
+    @include respondTo('diapente') {
+      border: 2px solid darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98); // #f0ecd6
+    }
+    @include respondTo('diapason') {
+      border: 2px solid getColor('primary-inversed');
+    }
+  } @else if $dark-rooms-button {
+    border: 2px solid darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98); // #f0ecd6
+    background-color: getColor('primary');
+    @include respondTo('diapente') {
+      border: 2px solid getColor('primary-inversed');
+    }
+  } @else if $menu-button {
+    background-color: getColor('primary');
+    border: 2px solid getColor('background');
+    @include respondTo('diapente') {
+      border: 2px solid darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98); // #f0ecd6
+    }
+    @include respondTo('diapason') {
+      border: 2px solid getColor('background');
+    }
+  } @else {
+    border: 1px solid getColor('accent');
+    background-color: getColor('primary');
+  }
+}
+
+//Міксин призначення border-radius кнопкам оформлення бронювання
+@mixin buttonReserve($border-radius: 25px) {
+  // Manually declare to provide an override to the browser default
+  @if $enable-rounded {
+    border-radius: $border-radius;
+  } @else {
+    border-radius: 2px;
+  }
+}
+
+// Міксин вибору фонового зображення
+$imgdir: '../images/'; // (rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65))
+@mixin backgroundImageRetina(
+  $gradient: linear-gradient(transparentize(getColor('primary'), 0.635), transparentize(getColor('primary'), 0.35)),
+  $page,
+  $section,
+  $part,
+  $file,
+  $bg-size: cover,
+  $bg-position: center,
+  $webp-file
+) {
+  background-image: $gradient,
+    url(#{$imgdir} + '/' + #{$page} + '/' + #{$section} + '/' + #{$part} + '/' + #{$file} + '.' + jpg);
+  background-size: $bg-size;
+  background-position: $bg-position;
+  background-repeat: no-repeat;
+  @supports (background: url('#{$webp-file}')) {
+    background-image: $gradient,
+      url(#{$imgdir} + '/' + #{$page} + '/' + #{$section} + '/' + #{$part} + '/' + #{$file} + '.' + webp);
+  }
+
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    & {
+      background-image: $gradient,
+        url(#{$imgdir} + '/' + #{$page} + '/' + #{$section} + '/' + #{$part} + '/' + #{$file} + '@2x.' + jpg);
+      @supports (background: url('#{$webp-file}')) {
+        background-image: $gradient,
+          url(#{$imgdir} + '/' + #{$page} + '/' + #{$section} + '/' + #{$part} + '/' + #{$file} + '@2x.' + webp);
+
+      }
+    }
+  }
+
+  @media (min-device-pixel-ratio: 3),
+    screen and (min-resolution: 288dpi),
+    screen and (min-resolution: 3dppx) {
+    & {
+      background-image: $gradient,
+        url(#{$imgdir} + '/' + #{$page} + '/' + #{$section} + '/' + #{$part} + '/' + #{$file} + '@3x.' + jpg);
+      @supports (background: url('#{$webp-file}')) {
+        background-image: $gradient,
+          url(#{$imgdir} + '/' + #{$page} + '/' + #{$section} + '/' + #{$part} + '/' + #{$file} + '@3x.' + webp);
+      }
+    }
+  }
+}
+
+// Міксини позиціонування--------------------------------
+@mixin position($position, $args) {
+  @each $o in top right bottom left {
+    $i: index($args, $o);
+   
+    @if $i and $i + 1<= length($args) and type-of(nth($args, $i + 1)) == number  {
+      #{$o}: nth($args, $i + 1);
+    }
+  }
+  position: $position;
+}
+   
+@mixin absolute ($args) {
+  @include position(absolute, $args);
+}
+   
+@mixin fixed ($args) {
+  @include position(fixed, $args);
+}
+   
+@mixin relative ($args) {
+  @include position(relative, $args);
+}

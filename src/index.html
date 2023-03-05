@@ -1,14 +1,44 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ukr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
+    <link rel="icon" href="./favicon/favicon.svg" sizes="32x32" />
+    <link rel="icon" href="./favicon/favicon.svg" sizes="192x192" />
+    <link rel="apple-touch-icon" href="./favicon/favicon.svg" />
+    <title>Ресторанно-готельний комплекс Міміно</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/swiper/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="./sass/index.scss" />
-    <script type="module" src="./index.js"></script>
   </head>
+
   <body>
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/example.html"></include>
+    <!-- Сергій -->
+    <include src="./partials/header.html"></include>
+    <main class="body-scroll">
+      <!-- Денис -->
+      <include src="./partials/home-hero.html"></include>
+      <!-- Віталій -->
+      <include src="./partials/restaurant-about.html"></include>
+      <!-- Марина -->
+      <include src="./partials/restaurant-details.html"></include>
+      <!-- Дмитро -->
+      <include src="./partials/hotel-about.html"></include>
+      <!-- Костянтин -->
+      <include src="./partials/hotel-details.html"></include>
+      <!-- Аліна -->
+      <include src="./partials/contacts.html"></include>
+    </main>
+    <!-- Надія -->
+    <include src="./partials/footer.html"></include>
+    <!-- Міла -->
+    <include src="./partials/modals.html"></include>
+    <!-- Денис -->
+    <include src="./partials/scroll-up.html"></include>
+
+    <script src="../node_modules/swiper/swiper-bundle.min.js"></script>
+    <script type="module" src="./index.js"></script>
   </body>
 </html>

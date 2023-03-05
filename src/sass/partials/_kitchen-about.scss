@@ -1,0 +1,7 @@
+// Нижній падінг секції
+.kitchen-about {
+
+  @include respondTo('diapason') {
+    padding-bottom: 32px;
+  }
+}

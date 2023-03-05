@@ -1,0 +1,24 @@
+// Головний підзаголовок
+.main-title {
+    @extend %marginPaddingReset;
+    font-family: $logo-font;
+    font-size: 96px;
+    font-weight: 700;
+    line-height: 1.075;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: getColor('primary-inversed');
+    margin-right: -30px; // через баг з letter-spacing, який вилазить на мобілці та респонсиві
+    margin-left: auto; 
+    margin-right: auto;
+
+    @include respondTo('semiditonus') {
+      font-size: 64px;
+      margin-right: -20px;
+    }
+  
+    @include respondTo('diapente') {
+      font-size: 128px;
+      margin-right: -36px;
+    }
+}

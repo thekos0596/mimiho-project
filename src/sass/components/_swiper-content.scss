@@ -1,0 +1,39 @@
+// Свайпер світлих секцій
+.swiper-content {
+  max-width: 330px;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 2px 2px 60px 2px transparentize(getColor('primary'), 0.75); // rgba(0, 0, 0, 0.25)
+
+  @include respondTo('semiditonus') {
+    max-width: 200px;
+  }
+
+  @include respondTo('diapente') {
+    max-width: 428px;
+  }
+
+  @include respondTo('diapason') {
+    max-width: 548px;
+  }
+
+  &--right {
+    margin-left: auto;
+  }
+
+  // Тіні слайдів, які відображаються та прозорість наступного слайду на мобілці
+  // & .swiper-slide-active {
+  //   // box-shadow: 2px 2px 60px 2px transparentize(getColor('primary'), 0.75); // rgba(0, 0, 0, 0.25)
+  // }
+
+  & .swiper-slide-next {
+    box-shadow: 2px 2px 60px 2px transparentize(getColor('primary'), 0.75); // rgba(0, 0, 0, 0.25)
+    
+    & .swiper-slide__image {
+      @include respondTo('tritonus') {
+        opacity: 0.6;
+        @include transition(opacity);
+      }
+    }
+  }
+}

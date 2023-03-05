@@ -1,0 +1,288 @@
+// Стилі секції
+.contacts {
+  padding-top: 36px;
+  padding-bottom: 32px;
+
+  @include respondTo('diapente') {
+    padding-top: 69px;
+    padding-bottom: 40px;
+  }
+
+  @include respondTo('diapason') {
+    padding-top: 64px;
+    padding-bottom: 74px;
+  }
+}
+
+// Стилі блоку logo
+.contacts__logo {
+  @include respondTo('diapente') {
+    margin-bottom: 8px;
+  }
+
+  @include respondTo('diapason') {
+    margin-bottom: 16px;
+    color: darken(getColor('primary-inversed'), 49.02); // #828282
+  }
+}
+
+// Стилі блоку subtitle
+.contacts__subtitle {
+  font-size: 16px;
+  color: lighten(getColor('primary'), 37.25); // #5f5f5f;
+  margin-bottom: 16px;
+
+  @include respondTo('diapente') {
+    margin-bottom: 52px;
+  }
+  @include respondTo('diapason') {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+}
+
+// Блок navigation
+.contacts__list {
+  @include respondTo('tritonus') {
+    margin-bottom: 32px;
+  }
+}
+
+// Список елементів блоку navigation
+.contacts__item {
+  &:not(:last-child) {
+    @include respondTo('tritonus') {
+      margin-bottom: 16px;
+    }
+  }
+
+  &:first-child {
+    @include respondTo('diapente') {
+      margin-bottom: 24px;
+    }
+  }
+
+  &:last-child {
+    @include respondTo('diapente') {
+      margin-top: 48px;
+    }
+  }
+}
+
+// Елементи навігації без посилань
+.contacts__department {
+  color: darken(saturate(getColor('accent'), 11.05), 24.51); // #c79002
+  display: flex;
+  align-items: center;
+
+  @include respondTo('semiditonus') {
+    font-size: 16px;
+  }
+
+  @include respondTo('diapente') {
+    margin-bottom: 8px;
+  }
+}
+
+// Обгортка номерів телефонів
+.contacts__box {
+  background-color: getColor('primary-inversed');
+  border-radius: 2px;
+  outline: 0.5px solid darken(saturate(getColor('accent'), 11.05), 24.51); // #c79002
+  @include transition(border-color, border-radius, background-color);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  &:hover,
+  &:focus {
+    border-color: getColor('primary-inversed');
+    border-radius: 10px;
+    background-color: getColor('accent');
+  }
+
+  @include respondTo('semiditonus') {
+    gap: 6px;
+  }
+
+  // Перший блок номеру телефону
+  &--first {
+    @include respondTo('tritonus') {
+      max-width: 145px; // +1px не віришена проблема вміщування контенту
+      width: 100%;
+    }
+  }
+}
+
+// Посилання на номери телефонів
+.contacts__contact {
+  display: flex;
+  align-items: center;
+  padding-top: 9px;
+  padding-bottom: 7px;
+  padding-left: 8px;
+  padding-right: 8px;
+
+  @include respondTo('semiditonus') {
+    padding-top: 6px;
+    padding-right: 3px;
+    padding-bottom: 5px;
+    padding-left: 3px;
+  }
+
+  &--vodafone {
+    padding-left: 8px;
+    padding-right: 0;
+
+    @include respondTo('semiditonus') {
+      padding-left: 3px;
+    }
+  }
+
+  &--kyivstar {
+    padding-right: 8px;
+    padding-left: 0;
+
+    @include respondTo('semiditonus') {
+      padding-right: 3px;
+    }
+  }
+}
+
+// Стилі номерів телефонів
+.contacts__number {
+  font-size: 14px;
+  line-height: 1.219;
+  letter-spacing: 0.02em;
+  color: lighten(saturate(getColor('primary'), 0.69), 28.43); // #494848;
+  @include transition(color);
+
+  @include respondTo('semiditonus') {
+    font-size: 11px;
+  }
+
+  @include respondTo('diapason') {
+    color: darken(getColor('primary-inversed'), 49.02); // #828282
+  }
+
+  .navigation__wrap:hover &,
+  .navigation__wrap:focus & {
+    color: getColor('primary-inversed');
+  }
+}
+
+// Іконки номерів телефонів
+.contacts__icon {
+  fill: darken(saturate(getColor('accent'), 11.05), 24.51); // #c79002
+  margin-right: 8px;
+  @include transition(fill);
+
+  .contacts__box:hover &,
+  .contacts__box:focus & {
+    fill: getColor('primary-inversed');
+  }
+
+  @include respondTo('semiditonus') {
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+  }
+}
+
+// Блок location
+.contacts__address {
+  max-width: 260px;
+  padding: 0;
+  color: lighten(saturate(getColor('primary'), 0.69), 28.43); // #494848;
+  background-color: getColor('primary-inversed');
+  outline: 0.5px solid darken(saturate(getColor('accent'), 11.05), 24.51); // #c79002
+  border: 0;
+  @include transition(background-color, outline);
+
+  @include respondTo('diapente') {
+    max-width: 285px;
+  }
+
+  &:focus,
+  &:hover {
+    outline: 0.5px solid getColor('primary-inversed');
+    color: getColor('primary-inversed');
+    background-color: getColor('accent');
+    border-radius: 10px;
+    border: none;
+  }
+}
+
+// Іконка блоку location
+.contacts__point {
+  fill: darken(saturate(getColor('accent'), 11.05), 24.51); // #c79002
+  min-width: 24px;
+  min-height: 100%;
+  margin: 0;
+}
+
+// Посилання блоку location
+.contacts__link {
+  gap: 10px;
+  padding-right: 43px;
+  padding-left: 10px;
+  font-size: 16px;
+  color: lighten(saturate(getColor('primary'), 0.69), 28.43); // #494848;
+  @include transition(color);
+
+  .contacts__address:hover &,
+  .contacts__address:focus &,
+  .contacts__address:active & {
+    color: getColor('primary-inversed');
+  }
+
+  @include respondTo('semiditonus') {
+    font-size: 13px;
+    padding-right: 10px;
+    gap: 6px;
+    padding-left: 8px;
+  }
+
+  @include respondTo('diapente') {
+    padding-top: 9px;
+    padding-right: 8px;
+    padding-bottom: 7px;
+  }
+
+  @include respondTo('diapason') {
+    color: darken(getColor('primary-inversed'), 49.02); // #828282
+  }
+}
+
+// Перенос рядку в тексті адреси блоку location
+.contacts__gap {
+  display: none;
+
+  @include respondTo('diapente') {
+    display: block;
+  }
+}
+
+// Стилі фрейму мапи
+.contacts__map {
+  max-width: 384px;
+  border: 1px solid darken(getColor('primary-inversed'), 27.06); // #bababa;
+  box-shadow: 2px 2px 60px 2px transparentize(getColor('primary'), 0.75); // rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  width: 100%;
+  height: 220px;
+
+  @include respondTo('diapente') {
+    max-width: 535px;
+    height: 412px;
+    margin-top: 13px;
+    box-shadow: 5px 5px 70px 17px transparentize(getColor('primary'), 0.75); // rgba(0, 0, 0, 0.25);
+  }
+
+  @include respondTo('diapason') {
+    max-width: 634px;
+    margin-top: 8px;
+    margin-bottom: 1px;
+    min-height: 100%;
+  }
+}

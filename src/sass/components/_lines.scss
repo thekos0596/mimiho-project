@@ -1,0 +1,205 @@
+// Декоративні смужки
+.lines { // rgba(186, 186, 186, 0.4)
+    background-image: linear-gradient(
+    to right,
+    getColor('background') 34%,
+    transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 34.1%,
+    transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 34.2%,
+    getColor('background') 34.2%,
+    getColor('background') 66%,
+    transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 66.1%,
+    transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 66.2%,
+    getColor('background') 66.2%,
+    getColor('background') 100%
+  );
+
+  @include respondTo('diapente') { // rgba(186, 186, 186, 0.4)
+    background-image: linear-gradient(
+      to right,
+      getColor('background') 27.1%,
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 27.1%,
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 27.2%,
+      getColor('background') 27.2%,
+      getColor('background') 49.9%,
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 49.9%,
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 50%,
+      getColor('background') 50%,
+      getColor('background') 72.8%,
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 72.8%,
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 72.9%,
+      getColor('background') 72.9%,
+      getColor('background') 100%
+    );
+  }
+
+  @include respondTo('diapason') { // rgba(186, 186, 186, 0.4)
+    background-image: linear-gradient(
+      to right,
+      getColor('background') 26.4%,
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 26.4%,
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 26.5%,
+      getColor('background') 26.5%,
+      getColor('background') 49.9%,
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 49.9%,
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 50%,
+      getColor('background') 50%,
+      getColor('background') 73.5%,
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 73.5%,
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 73.6%,
+      getColor('background') 73.6%,
+      getColor('background') 100%
+    );
+  }
+}
+
+// Декоративні смужки секції menu
+.lines-menu { // rgba(186, 186, 186, 0.4)
+  background-image: linear-gradient(
+    to right,
+    getColor('background') 34%,
+    transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 34.1%,
+    transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 34.2%,
+    getColor('background') 34.2%,
+    getColor('background') 66%,
+    transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 66.1%,
+    transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 66.2%,
+    getColor('background') 66.2%,
+    getColor('background') 100%
+  );
+
+  @include respondTo('diapente') { // #f0ecd6, rgba(186, 186, 186, 0.4)
+    background-image: linear-gradient(
+      to right,
+      darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 27.1%, 
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 27.1%,
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 27.2%,
+      darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 27.2%, 
+      darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 49.9%, 
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 49.9%,
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 50%,
+      darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 50%, 
+      darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 72.8%, 
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 72.8%,
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 72.9%,
+      darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 72.9%, 
+      darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 100% 
+    );
+  }
+
+  @include respondTo('diapason') { // #f0ecd6, rgba(186, 186, 186, 0.4)
+    background-image: linear-gradient(
+      to right,
+      darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 26.4%, 
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 26.4%,
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 26.5%,
+      darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 26.5%, 
+      darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 49.9%, 
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 49.9%,
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 50%,
+      darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 50%, 
+      darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 73.5%, 
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 73.5%,
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 73.6%,
+      darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 73.6%, 
+      darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 100% 
+    );
+  }
+}
+
+// Декоративні смужки секції room-triple
+.lines-dark { // #f0ecd6, rgba(186, 186, 186, 0.4)
+  background-image: linear-gradient(
+    to right,
+    darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 34%, 
+    transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 34.1%,
+    transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 34.2%,
+    darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 34.2%, 
+    darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 66%, 
+    transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 66.1%,
+    transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 66.2%,
+    darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 66.2%, 
+    darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 100% 
+  );
+
+  @include respondTo('diapente') { // #f0ecd6, rgba(186, 186, 186, 0.4)
+    background-image: linear-gradient(
+      to right,
+      darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 27.1%, 
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 27.1%,
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 27.2%,
+      darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 27.2%, 
+      darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 49.9%, 
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 49.9%,
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 50%,
+      darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 50%, 
+      darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 72.8%, 
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 72.8%,
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 72.9%,
+      darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 72.9%, 
+      darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 100% 
+    );
+  }
+
+  @include respondTo('diapason') { // #f0ecd6, rgba(186, 186, 186, 0.4)
+    background-image: linear-gradient(
+      to right,
+      darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 26.4%, 
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 26.4%,
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 26.5%,
+      darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 26.5%, 
+      darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 49.9%, 
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 49.9%,
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 50%,
+      darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 50%, 
+      darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 73.5%, 
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 73.5%,
+      transparentize(darken(getColor('primary-inversed'), 27.06), 0.6) 73.6%,
+      darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 73.6%, 
+      darken(saturate(adjust-hue(getColor('primary-inversed'), 51), 46.43), 10.98) 100% 
+    );
+  }
+}
+
+// Декоративні смужки футеру
+.lines-footer { // #0e0c07, rgba(122, 122, 122, 0.4)
+  background-image: 
+  linear-gradient(
+    to right,
+    lighten(saturate(adjust-hue(getColor('primary'), 43), 33.33), 4.12) 63.5%,
+    transparentize(lighten(getColor('primary'), 47.84), 0.6) 63.5%,
+    transparentize(lighten(getColor('primary'), 47.84), 0.6) 63.6%,
+    lighten(saturate(adjust-hue(getColor('primary'), 43), 33.33), 4.12) 63.6%,
+    lighten(saturate(adjust-hue(getColor('primary'), 43), 33.33), 4.12) 100%,
+  );
+
+  @include respondTo('diapente') { // #0e0c07, rgba(122, 122, 122, 0.4)
+    background-image: 
+    linear-gradient(
+      to right,
+      lighten(saturate(adjust-hue(getColor('primary'), 43), 33.33), 4.12) 49.9%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.6) 49.9%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.6) 50%,
+      lighten(saturate(adjust-hue(getColor('primary'), 43), 33.33), 4.12) 50%,
+      lighten(saturate(adjust-hue(getColor('primary'), 43), 33.33), 4.12) 73.1%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.6) 73.1%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.6) 73.2%,
+      lighten(saturate(adjust-hue(getColor('primary'), 43), 33.33), 4.12) 73.2%,
+      lighten(saturate(adjust-hue(getColor('primary'), 43), 33.33), 4.12) 100%,
+    );
+  }
+
+  @include respondTo('diapason') { // #0e0c07, rgba(122, 122, 122, 0.4)
+    background-image: linear-gradient(
+      to right,
+      lighten(saturate(adjust-hue(getColor('primary'), 43), 33.33), 4.12) 49.9%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.6) 49.9%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.6) 50%,
+      lighten(saturate(adjust-hue(getColor('primary'), 43), 33.33), 4.12) 50%,
+      lighten(saturate(adjust-hue(getColor('primary'), 43), 33.33), 4.12) 73.5%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.6) 73.5%,
+      transparentize(lighten(getColor('primary'), 47.84), 0.6) 73.6%,
+      lighten(saturate(adjust-hue(getColor('primary'), 43), 33.33), 4.12) 73.6%,
+      lighten(saturate(adjust-hue(getColor('primary'), 43), 33.33), 4.12) 100%
+    );
+  }
+}

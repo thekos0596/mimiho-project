@@ -1,0 +1,83 @@
+.header {
+  position: absolute;
+  display: block;
+  width: 100%;
+  top: 16px;
+  left: 0;
+  z-index: 999;
+
+  @include respondTo('diapente') {
+    top: 24px;
+  }
+}
+
+// Блок навігації сайтом у хедері
+.header__navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Список навігаційних елементів
+.header__navigation-list {
+  display: flex;
+  gap: 20px;
+
+  @include respondTo('semiditonus') {
+    gap: 8px;
+  }
+
+  @include respondTo('diapente') {
+    gap: 72px;
+  }
+}
+
+// Елементи списку навігації сайтом
+.header__navigation-item {
+  gap: 6px;
+  @include respondTo('diapente') {
+    gap: 32px;
+  }
+}
+
+// Посилання на інші дві сторінки сайту
+.header__department {
+
+  @include respondTo('semiditonus') {
+    font-size: 14px !important;
+  }
+}
+
+// Обгортка для блоку з номерами телефонів
+.header__navigation-wrap {
+  
+  @include respondTo('diapente') {
+    border: 1px solid transparentize(getColor('accent'), 0.3); // rgba(243, 198, 83, 0.7)
+    @include transition(border, background-color);
+  
+    &:hover,
+    &:focus,
+    &:active {
+      border: 1px solid getColor('primary-inversed');
+      background-color: transparentize(getColor('primary-inversed'), 0.8); // rgba(255, 255, 255, 0.2);
+    }
+  }
+}
+
+// Іконки телефонів у хедері
+.header__navigation-icon {
+  fill: getColor('accent');
+  @include transition(fill);
+
+  .header__navigation-wrap:hover & {
+    fill: getColor('primary-inversed');
+  }
+}
+
+// Номера телефонів
+.header__navigation-number {
+
+  @include respondTo('tritonus') {
+    display: none;
+  }
+}

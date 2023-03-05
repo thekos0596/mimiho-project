@@ -1,0 +1,91 @@
+// Блок лого
+.logo {
+  @extend %link;
+  @extend %marginPaddingReset;
+  font-family: $logo-font;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  line-height: 1.075;
+  text-transform: uppercase;
+
+  // Лого в хедері
+  &--header {
+    color: getColor('primary-inversed');
+    font-size: 36px;
+    margin-right: auto;
+
+    @include respondTo('semiditonus') {
+      font-size: 27px;
+    }
+
+    @include respondTo('diapente') {
+      font-size: 40px;
+    }
+
+    .restaurant & {
+
+      @include respondTo('tritonus') {
+        color: darken(saturate(adjust-hue(getColor('primary-inversed'), 53), 80.95), 4.12) // #fdfbec;
+      }
+    }
+  }
+
+  // Лого в футері
+  &--footer {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    color: getColor('accent');
+
+    @include respondTo('diapente') {
+      font-size: 64px;
+      margin-right: 29px;
+    }
+
+    @include respondTo('diapason') {
+      margin-right: 131px;
+    }
+  }
+
+  // Логотип без посилання в контенті сайту
+  &--nolink {
+    font-size: 40px;
+    color: lighten(saturate(getColor('primary'), 0.69), 28.43); // #494848
+
+    @include respondTo('diapente') {
+      font-size: 64px;
+    }
+  }
+
+  // Логотип без посилання у секціях номерів сторінки hotel.html
+  &--nolink-rooms {
+    margin-bottom: 32px;
+
+    @include respondTo('diapente') {
+      margin-bottom: 62px;
+    }
+
+    @include respondTo('diapason') {
+      margin-bottom: 72px;
+    }
+  }
+
+  // Логотип без посилання у секціях about
+  &--nolink-grey {
+    margin-bottom: 12px;
+
+    @include respondTo('diapente') {
+      margin-bottom: 24px;
+    }
+  }
+
+  // Логотип без посилання у секціях details головної сторінки
+  &--nolink-white {
+    color: getColor('primary-inversed');
+    margin-bottom: 12px;
+
+    @include respondTo('diapente') {
+      margin-bottom: 16px;
+    }
+  }
+}

@@ -1,0 +1,131 @@
+// Текст документа. Загальні стилі
+.text {
+  @extend %marginPaddingReset;
+  font-family: $text-font-stack;
+  line-height: 1.219;
+  letter-spacing: 0.02em;
+
+  &--main {
+    font-size: 12px;
+    font-weight: 600;
+
+    @include respondTo('semiditonus') {
+      font-size: 10px;
+    }
+
+    @include respondTo('diapente') {
+      font-size: 16px;
+    }
+  }
+
+  // Текст сторінки amenities
+  &--room {
+    font-weight: 700;
+    font-size: 16px;
+    color: lighten(getColor('primary'), 47.84); // #7a7a7a
+    max-width: 400px;
+    width: 100%;
+  }
+
+  // Перший текст-опис в секціях about на головній сторінці
+  &--about-first {
+    color: lighten(getColor('primary'), 37.25); // #5f5f5f
+
+    &--left {
+      max-width: 258px;
+
+      @include respondTo('semiditonus') {
+        max-width: 58vw;
+      }
+  
+      @include respondTo('diapente') {
+        max-width: 439px;
+      }
+  
+      @include respondTo('diapason') {
+        max-width: 518px;
+      }
+    }
+
+    &--right {
+      margin-left: auto;
+      max-width: 242px;
+
+      @include respondTo('semiditonus') {
+        max-width: 66vw;
+      }
+
+      @include respondTo('diapente') {
+        max-width: 419px;
+      }
+
+      @include respondTo('diapason') {
+        max-width: 488px;
+      }
+    }
+  }
+
+  // Другий текст-опис в секціях about на головній сторінці
+  &--about-second {
+    color: darken(saturate(getColor('accent'), 11.05), 24.51); // #c79002
+  }
+
+  // Текст сторінки hotel.html
+  &--rooms {
+    color: lighten(getColor('primary'), 37.25); // #5f5f5f;
+
+    @include respondTo('diapason') {
+      color: lighten(getColor('primary'), 47.84); // #7a7a7a;
+    }
+
+    &--left {
+      @extend .text--about-first--left;
+
+      @include respondTo('diapason') {
+        max-width: 400px;
+      }
+    }
+
+    &--right {
+      max-width: 242px;
+      margin-right: 73px; // не за макетом, має бути 59px
+      margin-left: auto;
+
+      @include respondTo('diapente') {
+        font-weight: 700;
+        max-width: 400px;
+        margin-right: 35px;
+
+        @include respondTo('diapason') {
+          margin-right: 118px; // не за макетом, має бути 110px
+        }
+      }
+    }
+  }
+
+  // Текст секцій details на головній сторінці
+  &--details {
+    color: darken(getColor('primary-inversed'), 27.06); //#bababa
+  }
+
+  &--details-left {
+    max-width: 259px;
+
+    @include respondTo('diapente') {
+      max-width: 610px;
+    }
+  }
+
+  &--details-right {
+    max-width: 243px;
+    margin-left: auto;
+
+    @include respondTo('semiditonus') {
+      max-width: 55vw;
+    }
+
+    @include respondTo('diapente') {
+      max-width: 549px;
+    }
+  }
+}

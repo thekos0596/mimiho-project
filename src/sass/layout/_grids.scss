@@ -1,0 +1,66 @@
+// Сітка футеру
+.grid-footer {
+  display: grid;
+  grid-template-columns: 264px auto;
+
+  @include respondTo('semiditonus') {
+    grid-template-columns: 58vw auto;
+  }
+
+  @include respondTo('diapente') {
+    grid-template-columns: 464px 239px 274px;
+  }
+
+  @include respondTo('diapason') {
+    grid-template-columns: 556px 301px 253px;
+  }
+}
+
+// Сітка опису секції amenities
+.grid-amenities {
+
+  @include respondTo('diapente') {
+    display: grid;
+    grid-template-columns: 480px 450px;
+  }
+
+  @include respondTo('diapason') {
+    grid-template-columns: 559px 550px;
+  }
+
+  & > .text:not(:last-child) {
+    @include respondTo('tritonus') {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+// Сітка контейнеру секції contacts
+.contacts-wrapper {
+
+  @include respondTo('diapente') {
+    display: grid;
+    grid-template-columns: 395px 535px;
+  }
+
+  @include respondTo('diapason') {
+    grid-template-columns: 476px 634px;
+  }
+}
+
+// Сітка елементів секції contacts: department/contact
+.grid-contacts {
+  display: grid;
+
+  @include respondTo('semiditonus') {
+    grid-template-columns: 30vw auto;
+  }
+
+  @include respondTo('ditonus') {
+    grid-template-columns: 124px auto;
+  }
+
+  @include respondTo('diapente') {
+    display: block;
+  }
+}

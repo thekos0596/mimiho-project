@@ -1,0 +1,19 @@
+// Стилі основного заголовку секції
+.hotel-hero__title {
+  margin-bottom: 32px;
+}
+
+// Підзаголовок 
+.hotel-hero__subtitle {
+  font-size: 20px;
+  margin-bottom: 178px;
+  color: getColor('primary-inversed');
+
+  @include respondTo('diapente') {
+    margin-bottom: 218px;
+  }
+
+  @include respondTo('diapason') {
+    margin-bottom: 242px;
+  }
+}

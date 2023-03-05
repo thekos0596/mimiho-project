@@ -1,0 +1,83 @@
+// Блок адреси з посиланням на google-мапу
+.location {
+    border: 1px solid transparentize(getColor('accent'), 0.3); // rgba(243, 198, 83, 0.3)
+    border-radius: 2px;
+    max-width: 210px;
+    width: 100%;
+    background-color: transparent;
+    color: getColor('accent');
+    @include transition(border, color, background-color);
+
+    &:focus, &:hover, &:active {
+      border: 1px solid getColor('primary-inversed');
+      color: getColor('primary-inversed');
+      background-color: transparentize(getColor('primary-inversed'), 0.8); // rgba(255, 255, 255, 0.8)
+    }
+  
+    @include respondTo('diapente') {
+      padding-right: 8px;
+      max-width: 285px;
+    }
+
+    // Абсолютне позиціонування у секціях героїв
+    .section-hero & {
+      @include respondTo('tritonus') {
+        position: absolute;
+        top: 64px;
+        right: 15px;
+      }
+    }
+  }
+  
+  // Посилання
+  .location__link {
+    @extend %link;
+    font-family: $text-font-stack;
+    font-size: 12px;
+    line-height: 1.219;
+    letter-spacing: 0.01em;
+    color: darken(getColor('primary-inversed'), 10.20); // #e5e5e5
+    text-align: left;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    @include transition(color);
+
+    @include respondTo('tritonus') {
+      margin-right: -11px;
+    }
+  
+    @include respondTo('diapente') {
+      font-size: 16px;
+    }
+
+    .location:hover &,
+    .location:focus &, 
+    .location:active & {
+      color: getColor('accent');
+    }
+  }
+  
+  // Іконка
+  .location__point {
+    margin-left: 6px;
+    width: 20px;
+    height: 20px;
+    fill: getColor('accent');
+    @include transition(fill);
+
+    .location:hover &,
+    .location:focus &, 
+    .location:active & {
+      fill: getColor('primary-inversed');
+    }
+  
+    @include respondTo('diapente') {
+      margin-left: 10px;
+      width: 24px;
+      height: 24px;
+    }
+  }

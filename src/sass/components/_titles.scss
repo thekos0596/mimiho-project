@@ -1,0 +1,51 @@
+// Заголовки секцій номерів сторірки hotel.html та підзаголовки секції amenities
+.bookingroom-title {
+  @extend %marginPaddingReset;
+  font-family: $text-times-font;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.15;
+  color: getColor('primary');
+
+  &--rooms {
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+
+    @include respondTo('diapente') {
+        font-size: 30px;
+        margin-bottom: 16px;
+    }
+
+    @include respondTo('diapason') {
+        font-size: 36px;
+        margin-bottom: 24px;
+    }
+
+    &--right {
+      text-align: right;
+
+      @include respondTo('diapente') {
+        margin-right: 43px;
+      }
+
+      @include respondTo('diapason') {
+        margin-right: 47px;
+      }
+    }
+  }
+}
+
+// Заголовки секцій details головної сторінки
+.details-title {
+  @extend %marginPaddingReset;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.219;
+  letter-spacing: 0.02em;
+  color: getColor('primary-inversed');
+
+  @include respondTo('diapente') {
+    font-size: 24px;
+  }
+}

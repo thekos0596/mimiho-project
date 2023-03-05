@@ -1,0 +1,24 @@
+// Головний слоган у перших двох героях
+.main-tagline {
+  font-family: $text-times-font;
+  @extend %marginPaddingReset;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.15;
+  text-transform: uppercase;
+
+  @include respondTo('semiditonus') {
+    font-size: 24px;
+  }
+
+  &--white {
+    color: getColor('primary-inversed');
+    letter-spacing: 0.05em;
+    margin-bottom: 113px;
+
+    @include respondTo('diapente') {
+      margin-bottom: 137px;
+      font-size: 36px;
+    }
+  }
+}
