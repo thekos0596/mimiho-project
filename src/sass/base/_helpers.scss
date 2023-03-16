@@ -51,5 +51,6 @@ img {
 
 .body-scroll {
   overflow-y: auto;
+  overflow-x: hidden;
   // scroll-snap-align: y mandatory;
 }
